@@ -25,15 +25,27 @@
     init();
   }
 
+  // Defensive runner — a failure in one setup can never block the others.
+  // This is the difference between the hamburger working and not working.
+  function safe(label, fn) {
+    try { fn(); } catch (err) {
+      // eslint-disable-next-line no-console
+      if (window.console) console.warn('[scrapkart] ' + label + ' failed', err);
+    }
+  }
+
   function init() {
-    setupLenis();
-    setupRevealObserver();
-    setupStatCounters();
-    setupScrollProgress();
-    setupNavScroll();
-    setupAnchorScroll();
-    setupCardSpotlight();
-    setupMobileMenu();
+    // Critical UX first — these MUST run, even if the nice-to-haves explode below.
+    safe('mobile-menu', setupMobileMenu);
+    safe('nav-scroll',  setupNavScroll);
+    safe('anchor',      setupAnchorScroll);
+
+    // Animation/polish layer — failures here are harmless.
+    safe('lenis',       setupLenis);
+    safe('reveal',      setupRevealObserver);
+    safe('counters',    setupStatCounters);
+    safe('progress',    setupScrollProgress);
+    safe('spotlight',   setupCardSpotlight);
   }
 
   // ------------------------------------------------------------------
