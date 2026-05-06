@@ -208,6 +208,24 @@ html.js-ready .word-reveal.reveal { opacity: 1; transform: none; }
 .word-reveal .line:nth-child(2) .word:nth-child(2) { transition-delay: 0.61s; }
 
 /* ===================================================================
+   Mobile reveal kill-switch
+   On small viewports the IntersectionObserver-driven reveals occasionally
+   left content stranded at opacity:0. Mobile gets static visible content;
+   desktop keeps the staggered entrance.
+   ================================================================ */
+@media (max-width: 767px) {
+  html.js-ready .reveal,
+  html.js-ready .reveal-lg {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html.js-ready .word-reveal .word {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ===================================================================
    Buttons
    ================================================================ */
 .btn {

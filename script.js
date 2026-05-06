@@ -152,7 +152,7 @@
 
     targets.forEach(function (el) { observer.observe(el); });
 
-    // Safety net: if anything is still hidden after the splash is gone, force-reveal it.
+    // Safety net: if anything is still hidden after a beat, force-reveal it.
     // Prevents content from being stranded at opacity:0 if the observer mis-fires.
     setTimeout(function () {
       targets.forEach(function (el) {
@@ -160,7 +160,7 @@
           el.classList.add('is-visible');
         }
       });
-    }, 2800);
+    }, 1200);
   }
 
   // ------------------------------------------------------------------
