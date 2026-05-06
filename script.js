@@ -33,6 +33,7 @@
     setupNavScroll();
     setupAnchorScroll();
     setupCardSpotlight();
+    setupMobileMenu();
   }
 
   // ------------------------------------------------------------------
@@ -233,6 +234,62 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  }
+
+  // ------------------------------------------------------------------
+  // Mobile menu — hamburger toggle + drawer open/close
+  // ------------------------------------------------------------------
+  function setupMobileMenu() {
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (!toggle || !menu) return;
+
+    function open() {
+      toggle.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
+      menu.classList.add('is-open');
+      menu.setAttribute('aria-hidden', 'false');
+      document.documentElement.classList.add('menu-open');
+      if (lenisInstance && typeof lenisInstance.stop === 'function') lenisInstance.stop();
+    }
+
+    function close() {
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+      menu.classList.remove('is-open');
+      menu.setAttribute('aria-hidden', 'true');
+      document.documentElement.classList.remove('menu-open');
+      if (lenisInstance && typeof lenisInstance.start === 'function') lenisInstance.start();
+    }
+
+    toggle.addEventListener('click', function () {
+      if (toggle.classList.contains('is-open')) close();
+      else open();
+    });
+
+    // Close on any link click inside the drawer
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        // small delay so the smooth scroll target is captured before we close
+        setTimeout(close, 80);
+      });
+    });
+
+    // Escape closes
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && toggle.classList.contains('is-open')) close();
+    });
+
+    // Close if user resizes back to desktop while open
+    let resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        if (window.innerWidth >= 768 && toggle.classList.contains('is-open')) close();
+      }, 200);
+    });
   }
 
   // ------------------------------------------------------------------
