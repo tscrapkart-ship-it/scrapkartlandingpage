@@ -1175,6 +1175,14 @@ html.menu-open .nav .nav-toggle span { background: var(--ink); }
   overflow: visible;
 }
 
+/* Scale the wordmark down on phones so 'SCRAPKART.' never clips */
+@media (max-width: 639px) {
+  .display-title {
+    font-size: clamp(40px, 13vw, 72px);
+    letter-spacing: -0.035em;
+  }
+}
+
 .display-meta {
   display: inline-flex;
   flex-wrap: wrap;
