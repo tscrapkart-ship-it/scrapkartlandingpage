@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScrapKart — India's industrial + retail scrap exchange</title>
+  <meta name="description" content="ScrapKart is India's industrial scrap exchange and your neighborhood scrap collector. List, bid, settle in 72 hours. One platform, two worlds — pick yours." />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ScrapKart — One platform, two worlds." />
+  <meta property="og:description" content="India's industrial scrap exchange — and your neighborhood scrap collector." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://scrapkart.app/" />
+
+  <!-- Fonts: Inter (Roobert substitute), Raleway, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Raleway:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logos/scrapkart-black.png" type="image/png" />
+
+  <!-- Inline critical splash CSS so there's no FOUC before styles.css loads -->
+  <style>
+    .splash-pre {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: #FAFAF7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================================== -->
+  <!-- 0 — SPLASH                                                       -->
+  <!-- =============================================================== -->
+  <div class="splash splash-pre" id="splash" aria-hidden="true">
+    <div class="splash-orbs" aria-hidden="true">
+      <span class="orb orb-green"></span>
+      <span class="orb orb-amber"></span>
+    </div>
+    <div class="splash-mark">
+      <img src="assets/logos/scrapkart-black.png" alt="ScrapKart" />
+      <span class="splash-tagline">India's scrap exchange</span>
+    </div>
+    <div class="splash-bar" aria-hidden="true"></div>
+  </div>
+
+  <!-- Top scroll progress bar -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- =============================================================== -->
+  <!-- 1 — STICKY NAV                                                   -->
+  <!-- =============================================================== -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="nav-brand" aria-label="ScrapKart home">
+        <img class="nav-logo nav-logo-white" src="assets/logos/scrapkart-white.png" alt="ScrapKart" />
+        <img class="nav-logo nav-logo-black" src="assets/logos/scrapkart-black.png" alt="" aria-hidden="true" />
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#two-worlds">Two worlds</a>
+        <a href="#numbers">Numbers</a>
+      </nav>
+      <a class="nav-cta" href="#two-worlds">
+        Choose your world
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- =============================================================== -->
+    <!-- 2 — HERO                                                         -->
+    <!-- =============================================================== -->
+    <section class="hero">
+      <div class="hero-gradient" aria-hidden="true"></div>
+      <div class="hero-orbs" aria-hidden="true">
+        <span class="orb orb-green"></span>
+        <span class="orb orb-amber"></span>
+        <span class="orb orb-rust"></span>
+      </div>
+
+      <div class="wrap hero-content">
+        <p class="eyebrow on-gradient hero-eyebrow reveal">Est. 2024 · Made in India</p>
+
+        <h1 class="hero-title reveal-lg reveal">
+          Trade. Recycle.<br/>
+          <span class="italic-accent">Repeat.</span>
+        </h1>
+
+        <p class="hero-sub reveal">
+          India's industrial scrap exchange — and your neighborhood scrap collector.
+          One platform, two worlds. Pick yours below.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a class="btn btn-solid" href="#two-worlds">
+            Choose your world
+            <span class="arrow" aria-hidden="true">↓</span>
+          </a>
+          <a class="btn btn-ghost" href="#about">What is ScrapKart?</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 3 — MARQUEE                                                      -->
+    <!-- =============================================================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>India's industrial scrap exchange</span>
+        <span class="marquee-dot"></span>
+        <span>12 cities active</span>
+        <span class="marquee-dot"></span>
+        <span>80+ verified recyclers</span>
+        <span class="marquee-dot"></span>
+        <span>₹2.4 Cr+ traded</span>
+        <span class="marquee-dot"></span>
+        <span>72-hour settlement</span>
+        <span class="marquee-dot"></span>
+        <span>Built in India</span>
+        <span class="marquee-dot"></span>
+        <!-- duplicate for seamless loop -->
+        <span>India's industrial scrap exchange</span>
+        <span class="marquee-dot"></span>
+        <span>12 cities active</span>
+        <span class="marquee-dot"></span>
+        <span>80+ verified recyclers</span>
+        <span class="marquee-dot"></span>
+        <span>₹2.4 Cr+ traded</span>
+        <span class="marquee-dot"></span>
+        <span>72-hour settlement</span>
+        <span class="marquee-dot"></span>
+        <span>Built in India</span>
+        <span class="marquee-dot"></span>
+      </div>
+    </div>
+
+    <!-- =============================================================== -->
+    <!-- 4 — ABOUT                                                        -->
+    <!-- =============================================================== -->
+    <section class="about" id="about">
+      <div class="about-orbs" aria-hidden="true">
+        <span class="orb orb-amber"></span>
+      </div>
+      <div class="wrap about-grid">
+        <div>
+          <p class="eyebrow about-eyebrow reveal">What ScrapKart is</p>
+          <p class="about-manifesto reveal">
+            Scrap is value. Most of India still treats it as waste — landfilled,
+            burned, or quietly bought at undervalued prices. ScrapKart is the
+            <em>missing infrastructure:</em> a digital exchange where lots get
+            listed, verified buyers bid in the open, and settlement clears in
+            <em>72 hours.</em>
+          </p>
+        </div>
+        <div class="about-cards">
+          <div class="about-card reveal">
+            <p class="eyebrow about-card-label">Verified buyers</p>
+            <p class="about-card-body">Every recycler is CPCB and EPR-checked before they get the keys.</p>
+          </div>
+          <div class="about-card reveal">
+            <p class="eyebrow about-card-label">72-hour settlement</p>
+            <p class="about-card-body">Bid accepted today, money in the bank by the third working day.</p>
+          </div>
+          <div class="about-card reveal">
+            <p class="eyebrow about-card-label">Scale-agnostic</p>
+            <p class="about-card-body">A household drop-off of newsprint or a 30-tonne foundry pickup — same disciplined process.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 5 — DISPLAY MOMENT                                               -->
+    <!-- =============================================================== -->
+    <section class="display">
+      <div class="display-orbs" aria-hidden="true">
+        <span class="orb orb-green"></span>
+        <span class="orb orb-rust"></span>
+      </div>
+      <div class="wrap display-content">
+        <p class="eyebrow display-eyebrow reveal">Made visible</p>
+        <h2 class="display-title reveal-lg reveal">SCRAPKART.</h2>
+        <div class="display-meta reveal">
+          <span>Industrial · Retail</span>
+          <span>One platform · Two worlds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 6 — TWO WORLDS — the routing CTAs                                -->
+    <!-- =============================================================== -->
+    <section class="worlds" id="two-worlds">
+      <div class="worlds-orbs" aria-hidden="true">
+        <span class="orb orb-green"></span>
+        <span class="orb orb-rust"></span>
+      </div>
+
+      <div class="wrap">
+        <div class="worlds-header">
+          <p class="eyebrow worlds-eyebrow reveal">The fork</p>
+          <h2 class="worlds-title reveal">
+            One platform, <span class="italic-accent">two worlds.</span>
+          </h2>
+          <p class="worlds-sub reveal">Choose your path</p>
+        </div>
+
+        <div class="worlds-grid">
+
+          <!-- B2B card -->
+          <a class="world-card world-b2b reveal" href="https://b2b.scrapkart.app">
+            <div class="world-card-bg" aria-hidden="true"></div>
+            <span class="world-decoration" aria-hidden="true">B2B</span>
+
+            <p class="world-eyebrow">For yards, foundries &amp; recyclers</p>
+            <h3 class="world-heading">Trade in truckloads.</h3>
+            <p class="world-body">
+              Verified industrial scrap exchange. List lots, get bids from
+              CPCB-certified recyclers, settle in 72 hours. Built for
+              businesses moving real weight.
+            </p>
+            <span class="world-cta">
+              Enter B2B
+              <span class="arrow" aria-hidden="true">→</span>
+            </span>
+          </a>
+
+          <!-- B2C card -->
+          <a class="world-card world-b2c reveal" href="https://b2c.scrapkart.app">
+            <div class="world-card-bg" aria-hidden="true"></div>
+            <span class="world-decoration" aria-hidden="true">B2C</span>
+
+            <p class="world-eyebrow">For homes, shops &amp; everyday scrap</p>
+            <h3 class="world-heading">Drop off. Get paid.</h3>
+            <p class="world-body">
+              Doorstep pickup or drop-off at a verified collection centre.
+              Newsprint, plastics, e-waste — fair price, paid into UPI
+              within 24 hours.
+            </p>
+            <span class="world-cta">
+              Enter B2C
+              <span class="arrow" aria-hidden="true">→</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 7 — STATS                                                        -->
+    <!-- =============================================================== -->
+    <section class="stats" id="numbers">
+      <div class="wrap">
+        <p class="eyebrow stats-eyebrow reveal">By the numbers</p>
+        <div class="stats-grid">
+          <div class="reveal">
+            <span class="stat-value" data-counter data-target="24000000" data-prefix="₹" data-suffix="+">₹0+</span>
+            <span class="stat-label">in scrap traded</span>
+          </div>
+          <div class="reveal">
+            <span class="stat-value" data-counter data-target="80" data-suffix="+">0+</span>
+            <span class="stat-label">verified recyclers</span>
+          </div>
+          <div class="reveal">
+            <span class="stat-value" data-counter data-target="12">0</span>
+            <span class="stat-label">cities active</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 8 — CLOSING BAND                                                 -->
+    <!-- =============================================================== -->
+    <section class="closing" id="contact">
+      <div class="closing-gradient" aria-hidden="true"></div>
+      <div class="closing-orbs" aria-hidden="true">
+        <span class="orb orb-green"></span>
+        <span class="orb orb-amber"></span>
+      </div>
+
+      <div class="wrap closing-content">
+        <p class="eyebrow on-gradient closing-eyebrow reveal">2026 — Present</p>
+
+        <h2 class="closing-title display reveal word-reveal">
+          <span class="line word-mask"><span class="word">Built</span> <span class="word">in</span> <span class="word">India.</span></span>
+          <span class="line word-mask"><span class="italic-accent word">For</span> <span class="italic-accent word">India.</span></span>
+        </h2>
+
+        <p class="closing-body reveal">
+          Making the value chain visible — one truckload at a time.
+        </p>
+
+        <div class="closing-actions reveal">
+          <a class="btn btn-solid" href="https://b2b.scrapkart.app">
+            For business
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn-ghost" href="https://b2c.scrapkart.app">For your home →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =============================================================== -->
+  <!-- 9 — FOOTER                                                       -->
+  <!-- =============================================================== -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logos/scrapkart-black.png" alt="ScrapKart" />
+        <p class="footer-tag">
+          India's industrial + retail scrap exchange. Built in India,
+          for India. List, bid, settle — one platform, two worlds.
+        </p>
+        <p class="footer-copy">© 2026 SCRAPKART PVT LTD</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#two-worlds">Two worlds</a></li>
+          <li><a href="#numbers">Stats</a></li>
+          <li><a href="mailto:hello@scrapkart.app">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Worlds</h4>
+        <ul>
+          <li><a href="https://b2b.scrapkart.app">For business</a></li>
+          <li><a href="https://b2c.scrapkart.app">For your home</a></li>
+          <li><a href="https://b2b.scrapkart.app/login">Sign in (B2B)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+          <li><a href="#" aria-label="Twitter / X">Twitter / X</a></li>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <span>Made in India · 2026</span>
+      <span>scrapkart.app</span>
+    </div>
+  </footer>
+
+  <!-- Lenis smooth scroll first, then our script -->
+  <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

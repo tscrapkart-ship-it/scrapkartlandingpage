@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency dirs (none currently, but a safety net)
+node_modules/
+
+# Build artefacts
+dist/
+build/
+.cache/
+
+# Vercel
+.vercel
