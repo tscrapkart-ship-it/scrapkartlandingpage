@@ -144,11 +144,23 @@
         }
       });
     }, {
-      rootMargin: '0px 0px -10% 0px',
-      threshold: 0.15
+      // Lenient: any pixel of the element entering the viewport triggers the reveal.
+      // Tighter rules occasionally left elements stuck invisible on small screens.
+      rootMargin: '0px',
+      threshold: 0.01
     });
 
     targets.forEach(function (el) { observer.observe(el); });
+
+    // Safety net: if anything is still hidden after the splash is gone, force-reveal it.
+    // Prevents content from being stranded at opacity:0 if the observer mis-fires.
+    setTimeout(function () {
+      targets.forEach(function (el) {
+        if (!el.classList.contains('is-visible')) {
+          el.classList.add('is-visible');
+        }
+      });
+    }, 2800);
   }
 
   // ------------------------------------------------------------------
