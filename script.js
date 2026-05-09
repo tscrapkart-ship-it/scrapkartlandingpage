@@ -43,6 +43,7 @@
     safe('mobile-menu', setupMobileMenu);
     safe('nav-scroll',  setupNavScroll);
     safe('anchor',      setupAnchorScroll);
+    safe('stubs',       setupPlaceholderLinks);
 
     // Animation/polish layer — failures here are harmless.
     safe('lenis',       setupLenis);
@@ -50,6 +51,14 @@
     safe('counters',    setupStatCounters);
     safe('progress',    setupScrollProgress);
     safe('spotlight',   setupCardSpotlight);
+  }
+
+  // Placeholder links (e.g. Blogs — page doesn't exist yet). Suppress the
+  // default jump-to-top behaviour of an empty `#` href.
+  function setupPlaceholderLinks() {
+    document.querySelectorAll('[data-blogs-stub]').forEach(function (link) {
+      link.addEventListener('click', function (e) { e.preventDefault(); });
+    });
   }
 
   // ------------------------------------------------------------------
