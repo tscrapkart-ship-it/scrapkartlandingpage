@@ -13,6 +13,10 @@
 (function () {
   'use strict';
 
+  // Module-scope state — declared up-front so anything called from init()
+  // never hits a temporal dead zone before this binding is initialized.
+  let lenisInstance = null;
+
   // Mark JS-ready immediately so CSS can switch reveal targets to hidden state.
   document.documentElement.classList.add('js-ready');
 
@@ -63,10 +67,8 @@
   }
 
   // ------------------------------------------------------------------
-  // Lenis smooth scroll
+  // Lenis smooth scroll  (lenisInstance declared at top of IIFE)
   // ------------------------------------------------------------------
-  let lenisInstance = null;
-
   function setupLenis() {
     if (typeof window.Lenis === 'undefined') return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
